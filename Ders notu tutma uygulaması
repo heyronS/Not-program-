@@ -1,0 +1,127 @@
+
+mat_not = []
+fizik_not = []
+kimya_not = []
+biyoloji_not = []
+
+
+def hosgeldiniz():
+	print ("İstediğiniz dersin notunu görüntülemek için rakamları takip edin.")
+
+
+def menu_Ders():    
+	msg = """ Dersler:
+	1-Matematik
+	2-Fizik
+	3-Kimya
+	4-Biyoloji
+	5-Not ekle
+	6-Çıkış yap
+	"""
+	print(msg)
+
+
+def isle():
+
+	n = int(input("Girdiğiniz Dersin Rakamı: "))
+
+	if n == 1:
+		# mat not listesi boş mu değil mi? değilse bunları yap
+		if len(mat_not) != 0:
+			print("Matematik notları görüntüleniyor...")
+			print(mat_not)
+
+        			#menüye dönelim işimiz bitti
+			menu_Ders()
+			isle()
+
+        # boş mu? o zaman not yoktur
+		else:
+			print("Matematik notu bulunamadı.")
+			isle()
+
+    		#5. komuta kadar her ders için aynı şey...
+
+	elif n == 2:
+		if len(fizik_not) != 0: 
+			print("Fizik notları görüntüleniyor...")
+			print(fizik_not)
+			menu_Ders()
+		else:
+			print("Fizik notu bulunamadı.")
+			isle()
+
+	elif n == 3:
+		if len(kimya_not) != 0: 
+			print("Kimya notları görüntüleniyor...")
+			print(kimya_not)
+			menu_Ders()
+		else:
+			print("Kimya notu bulunamadı.")
+			isle()
+
+	elif n == 4:
+		if len(biyoloji_not) != 0: 
+			print("Biyoloji notları görüntüleniyor...")
+			print(biyoloji_not)
+			menu_Ders()
+		else:
+			print("Biyoloji notu bulunamadı.")
+			isle()
+
+	elif n == 5:
+    #bu işlem sanki biraz uzun, farklı fonksiyon yazalım
+		not_ekle()
+        
+
+
+	elif n == 6:
+		quit()
+
+def not_ekle():
+	print (""" Not girmek istediğiniz dersi seçin : 
+		1-Matematik
+		2-Fizik
+		3-Kimya 
+		4-Biyoloji
+		""")
+
+
+	not_ekleme = int(input(""))
+
+	if not_ekleme == 1:
+
+		yeni_mat_not = input("Matematik notunuzu ekleyin: ") 
+		mat_not.append(yeni_mat_not)
+		print("Matematik notunuz başarıyla eklendi.")
+		isle()
+
+	elif not_ekleme == 2:
+
+		yeni_fizik_not = input("Fizik notunuzu ekleyin: ") 
+		fizik_not.append(yeni_fizik_not)
+		print("Fizik notunuz başarıyla eklendi.")
+		isle()
+
+	elif not_ekleme == 3:
+
+		yeni_kimya_not = input("Kimya notunuzu ekleyin: ") 
+		kimya_not.append(yeni_kimya_not)
+		print("Kimya notunuz başarıyla eklendi.")
+		isle()
+
+	elif not_ekleme == 4:
+
+		yeni_biyoloji_not = input("Biyoloji notunuzu ekleyin: ") 
+		biyoloji_not.append(yeni_biyoloji_not)
+		print("Biyoloji notunuz başarıyla eklendi.")
+		isle()
+
+def run():
+	menu_Ders()
+	isle()
+
+#programı başlat
+run()
+
+
